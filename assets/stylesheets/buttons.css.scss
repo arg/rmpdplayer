@@ -1,0 +1,125 @@
+$color: #bbbbbb;
+$color-dark: darken($color, 25%);
+$background: #ffffff;
+$background-dark: darken($background, 5%);
+$size: 4.5em;
+
+menu {
+  text-align: center;
+  position: relative;
+
+  button {
+    position: relative;
+    display: inline-block;
+    padding: 0.6em;
+    background: #ffffff;
+    border-radius: 10px;
+    border: none;
+    width: $size;
+    height: $size;
+    margin-right: 20px;
+    outline: none;
+
+    &:hover {
+      background: $background-dark;
+    }
+
+    &:before, &:after {
+      position: absolute;
+      content: " ";
+    }
+  }
+
+  .play:before {
+    z-index: 2;
+    top: $size * 0.22;
+    left: $size * 0.36;
+    width: 0;
+    height: 0;
+    border: $size * 0.3 solid transparent;
+    border-left-color: $color;
+    border-left-width: ($size * 0.45);
+  }
+
+  .play:hover:before {
+    border-left-color: $color-dark;
+  }
+
+  /* Stop */
+  .stop:before {
+    top: ($size * 0.28);
+    left: ($size * 0.28);
+    width: ($size * 0.47);
+    height: ($size * 0.47);
+    background: $color;
+  }
+
+  .stop:hover:before {
+    background: $color-dark;
+  }
+
+  /* Fast-Forward */
+
+  .next:before, .next:after {
+    width: 0;
+    height: 0;
+    top: ($size * 0.26);
+    border: ($size * 0.25) solid transparent;
+    border-left-color: $color;
+    border-left-width: ($size * 0.27);
+  }
+
+  .next:before {
+    left: $size * 0.3;
+  }
+
+  .next:after {
+    left: $size * 0.566;
+    content: " ";
+  }
+
+  .next:hover:before, .next:hover:after {
+    border-left-color: $color-dark;
+  }
+
+  /* Rewind */
+  .previous:before, .previous:after {
+    width: 0;
+    height: 0;
+    top: ($size * 0.26);
+    border: ($size * 0.25) solid transparent;
+    border-right-color: $color;
+    border-right-width: ($size * 0.27);
+  }
+
+  .previous:before {
+    left: ($size * 0.22);
+  }
+
+  .previous:after {
+    left: ($size *-.05);
+    content: " "
+  }
+
+  .previous:hover:after, .previous:hover:before {
+    border-right-color: $color-dark;
+  }
+
+  /* Pause */
+  .pause:before, .pause:after {
+    height: ($size * 0.47);
+    width: ($size * 0.19);
+    left: ($size * 0.29);
+    top: ($size * 0.28);
+    display: block;
+    background-color: $color;
+  }
+
+  .pause:after {
+    left: ($size * 0.54);
+  }
+
+  .pause:hover:before, .pause:hover:after {
+    background-color: $color-dark;
+  }
+}

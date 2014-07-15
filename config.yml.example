@@ -1,0 +1,3 @@
+mpd_host:   # music.yourdomain.com
+mpd_port:   # 6600
+stream_url: # http://music.yourdomain.com:8001

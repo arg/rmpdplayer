@@ -1,0 +1,12 @@
+%div.row
+  %div.twelve.columns
+    %table
+      %thead
+        %tr
+          %th Artist
+          %th Title
+          %th Album
+          %th Length
+      %tbody
+        - songs_list.each do |song|
+          = partial :song, locals: { song: song }

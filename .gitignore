@@ -1,0 +1,6 @@
+..idea/
+/public/assets
+/.sass-cache
+.ruby-gemset
+.ruby-version
+config.yml

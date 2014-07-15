@@ -1,0 +1,15 @@
+:javascript
+  var streamURL = '#{configuration[:stream_url]}';
+
+%div#header.row
+  %div.seven.columns
+    %div#current-song
+    %div#state
+  %div.one.column
+    %div#spin
+  %div.four.columns
+    %menu
+      %button.previous{data: { action: :previous } }
+      %button#playstop.play{data: { action: :play } }
+      %button.stop{data: { action: :stop } }
+      %button.next{data: { action: :next } }
